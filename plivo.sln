@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plivo-net", "plivo-net.csproj", "{037585BD-A95D-4F90-9B1F-528B720A6A02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plivo-dotnet", "plivo-dotnet.csproj", "{037585BD-A95D-4F90-9B1F-528B720A6A02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
