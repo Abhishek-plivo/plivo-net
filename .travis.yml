@@ -1,10 +1,11 @@
 language: csharp
 solution: plivo.sln
+dotnet: 1.0.1
+mono: none
+dist: trusty
+sudo: required
 
-matrix:
-  include:
-    - dotnet: 1.0.1
-      mono: none
-      dist: trusty
-      env: DOTNETCORE=1  # optional, can be used to take different code paths in your script
-    - mono: latest
+install:
+  - dotnet restore
+  - dotnet build --framework netstandard1.4 plivo-dotnet.csproj
+  - dotnet build --framework netcoreapp1.1 plivo-dotnet.csproj
