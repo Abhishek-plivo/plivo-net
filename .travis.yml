@@ -7,5 +7,9 @@ sudo: required
 
 install:
   - dotnet restore
-  - dotnet build --framework netstandard1.4 plivo-dotnet.csproj
+  # - dotnet build --framework netstandard1.4 plivo-dotnet.csproj
   - dotnet build --framework netcoreapp1.1 plivo-dotnet.csproj
+
+script:
+  # - dotnet run --framework netstandard1.4 plivo-dotnet.csproj
+  - dotnet run --framework netcoreapp1.1 plivo-dotnet.csproj
