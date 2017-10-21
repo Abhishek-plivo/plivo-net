@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{037585BD-A95D-4F90-9B1F-528B720A6A02}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>plivo_dotnet</RootNamespace>
+    <AssemblyName>plivo_dotnet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\5.0.1\lib\mono\4.5-api\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+      <HintPath>packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Authentication\BasicAuth.cs" />
+    <Compile Include="src\Client\HttpClient.cs" />
+    <Compile Include="src\Client\IHttpClient.cs" />
+    <Compile Include="src\Client\SystemHttpClient.cs" />
+    <Compile Include="src\Exception\PlivoAuthenticationException.cs" />
+    <Compile Include="src\Exception\PlivoNotFoundException.cs" />
+    <Compile Include="src\Exception\PlivoRequestException.cs" />
+    <Compile Include="src\Exception\PlivoResponseException.cs" />
+    <Compile Include="src\Exception\PlivoRestException.cs" />
+    <Compile Include="src\Exception\PlivoServerException.cs" />
+    <Compile Include="src\Exception\PlivoValidationException.cs" />
+    <Compile Include="src\Exception\PlivoXMLException.cs" />
+    <Compile Include="src\Http\PlivoRequest.cs" />
+    <Compile Include="src\Http\PlivoResponse.cs" />
+    <Compile Include="src\PlivoApi.cs" />
+    <Compile Include="src\Resource\Account\Account.cs" />
+    <Compile Include="src\Resource\Account\AccountInterface.cs" />
+    <Compile Include="src\Resource\Application\Application.cs" />
+    <Compile Include="src\Resource\Application\ApplicationInterface.cs" />
+    <Compile Include="src\Resource\Application\ApplicationCreateResponse.cs" />
+    <Compile Include="src\Resource\BaseResponse.cs" />
+    <Compile Include="src\Resource\Call\CallCreateResponse.cs" />
+    <Compile Include="src\Resource\Call\Call.cs" />
+    <Compile Include="src\Resource\Call\CallInterface.cs" />
+    <Compile Include="src\Resource\Call\LiveCall.cs" />
+    <Compile Include="src\Resource\Call\LiveCallListResponse.cs" />
+    <Compile Include="src\Resource\Conference\Conference.cs" />
+    <Compile Include="src\Resource\Conference\ConferenceInterface.cs" />
+    <Compile Include="src\Resource\Conference\ConferenceListResponse.cs" />
+    <Compile Include="src\Resource\Conference\ConferenceMemberActionResponse.cs" />
+    <Compile Include="src\Resource\CreateResponse.cs" />
+    <Compile Include="src\Resource\DeleteResponse.cs" />
+    <Compile Include="src\Resource\Endpoint\EndpointCreateResponse.cs" />
+    <Compile Include="src\Resource\Endpoint\Endpoint.cs" />
+    <Compile Include="src\Resource\Endpoint\EndpointInterface.cs" />
+    <Compile Include="src\Resource\Message\MessageCreateResponse.cs" />
+    <Compile Include="src\Resource\Message\Message.cs" />
+    <Compile Include="src\Resource\Message\MessageInterface.cs" />
+    <Compile Include="src\Resource\Meta.cs" />
+    <Compile Include="src\Resource\PhoneNumber\PhoneNumberBuyResponse.cs" />
+    <Compile Include="src\Resource\RentedNumber\RentedNumber.cs" />
+    <Compile Include="src\Resource\RentedNumber\RentedNumberInterface.cs" />
+    <Compile Include="src\Resource\PhoneNumber\PhoneNumber.cs" />
+    <Compile Include="src\Resource\PhoneNumber\PhoneNumberInterface.cs" />
+    <Compile Include="src\Resource\Pricing\Pricing.cs" />
+    <Compile Include="src\Resource\Pricing\PricingInterface.cs" />
+    <Compile Include="src\Resource\RecordCreateResponse.cs" />
+    <Compile Include="src\Resource\Recording\Recording.cs" />
+    <Compile Include="src\Resource\Recording\RecordingInterface.cs" />
+    <Compile Include="src\Resource\Resource.cs" />
+    <Compile Include="src\Resource\ListResponse.cs" />
+    <Compile Include="src\Resource\ResourceInterface.cs" />
+    <Compile Include="src\Resource\Subaccount\Subaccount.cs" />
+    <Compile Include="src\Resource\Subaccount\SubaccountCreateResponse.cs" />
+    <Compile Include="src\Resource\Subaccount\SubaccountInterface.cs" />
+    <Compile Include="src\Resource\UpdateResponse.cs" />
+    <Compile Include="src\Util.cs" />
+    <Compile Include="src\Version.cs" />
+    <Compile Include="src\XML\Conference.cs" />
+    <Compile Include="src\XML\Dial.cs" />
+    <Compile Include="src\XML\Dtmf.cs" />
+    <Compile Include="src\XML\GetDigits.cs" />
+    <Compile Include="src\XML\Hangup.cs" />
+    <Compile Include="src\XML\Message.cs" />
+    <Compile Include="src\XML\Number.cs" />
+    <Compile Include="src\XML\Play.cs" />
+    <Compile Include="src\XML\PlivoElement.cs" />
+    <Compile Include="src\XML\PlivoXML.cs" />
+    <Compile Include="src\XML\PreAnswer.cs" />
+    <Compile Include="src\XML\Record.cs" />
+    <Compile Include="src\XML\Redirect.cs" />
+    <Compile Include="src\XML\Response.cs" />
+    <Compile Include="src\XML\Speak.cs" />
+    <Compile Include="src\XML\User.cs" />
+    <Compile Include="src\XML\Wait.cs" />
+    <Compile Include="test\BaseTestCase.cs" />
+    <Compile Include="test\Resources\TestAccount.cs" />
+    <Compile Include="test\Resources\TestCall.cs" />
+    <Compile Include="test\Resources\TestConference.cs" />
+    <Compile Include="test\Resources\TestEndpoint.cs" />
+    <Compile Include="test\Resources\TestExceptions.cs" />
+    <Compile Include="test\Resources\TestMessage.cs" />
+    <Compile Include="test\Resources\TestNumber.cs" />
+    <Compile Include="test\Resources\TestPhoneNumber.cs" />
+    <Compile Include="test\Resources\TestPricing.cs" />
+    <Compile Include="test\Resources\TestRecording.cs" />
+    <Compile Include="test\Resources\TestSubaccount.cs" />
+    <Compile Include="test\TestClient.cs" />
+    <Compile Include="test\XML\TestXML.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AUTHORS.md" />
+    <Content Include="test\Mocks\accountGetResponse.json" />
+    <Content Include="test\Mocks\accountModifyResponse.json" />
+    <Content Include="test\Mocks\applicationCreateResponse.json" />
+    <Content Include="test\Mocks\applicationGetResponse.json" />
+    <Content Include="test\Mocks\applicationListResponse.json" />
+    <Content Include="test\Mocks\applicationModifyResponse.json" />
+    <Content Include="test\Mocks\callCreateResponse.json" />
+    <Content Include="test\Mocks\callGetResponse.json" />
+    <Content Include="test\Mocks\callListResponse.json" />
+    <Content Include="test\Mocks\callUpdateResponse.json" />
+    <Content Include="test\Mocks\conferenceDeleteAllResponse.json" />
+    <Content Include="test\Mocks\conferenceDeleteResponse.json" />
+    <Content Include="test\Mocks\conferenceGetResponse.json" />
+    <Content Include="test\Mocks\conferenceListResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberDeafCreateResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberDeleteResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberKickCreateResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberMuteCreateResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberPlayCreateResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberPlayDeleteResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberSpeakCreateResponse.json" />
+    <Content Include="test\Mocks\conferenceMemberSpeakDeleteResponse.json" />
+    <Content Include="test\Mocks\conferenceRecordCreateResponse.json" />
+    <Content Include="test\Mocks\endpointCreateResponse.json" />
+    <Content Include="test\Mocks\endpointGetResponse.json" />
+    <Content Include="test\Mocks\endpointListResponse.json" />
+    <Content Include="test\Mocks\endpointUpdateResponse.json" />
+    <Content Include="test\Mocks\liveCallDtmfCreateResponse.json" />
+    <Content Include="test\Mocks\liveCallGetResponse.json" />
+    <Content Include="test\Mocks\liveCallListGetResponse.json" />
+    <Content Include="test\Mocks\liveCallPlayCreateResponse.json" />
+    <Content Include="test\Mocks\liveCallRecordCreateResponse.json" />
+    <Content Include="test\Mocks\liveCallSpeakCreateResponse.json" />
+    <Content Include="test\Mocks\liveCallSpeakDeleteResponse.json" />
+    <Content Include="test\Mocks\messageGetResponse.json" />
+    <Content Include="test\Mocks\messageListResponse.json" />
+    <Content Include="test\Mocks\messageSendResponse.json" />
+    <Content Include="test\Mocks\numberCreateResponse.json" />
+    <Content Include="test\Mocks\numberGetResponse.json" />
+    <Content Include="test\Mocks\numberListResponse.json" />
+    <Content Include="test\Mocks\numberUpdateResponse.json" />
+    <Content Include="test\Mocks\phoneNumberCreateResponse.json" />
+    <Content Include="test\Mocks\phoneNumberListResponse.json" />
+    <Content Include="test\Mocks\pricingGetResponse.json" />
+    <Content Include="test\Mocks\recordingGetResponse.json" />
+    <Content Include="test\Mocks\recordingListResponse.json" />
+    <Content Include="test\Mocks\subaccountCreateResponse.json" />
+    <Content Include="test\Mocks\subaccountGetResponse.json" />
+    <Content Include="test\Mocks\subaccountListResponse.json" />
+    <Content Include="test\Mocks\subaccountModifyResponse.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+</Project>
